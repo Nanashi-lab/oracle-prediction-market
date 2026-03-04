@@ -1,0 +1,9 @@
+{
+  "schedule": "0 0 12 8 3 *",
+  "question": "Did the Federal Reserve cut interest rates in March 2026?",
+  "geminiModel": "gemini-2.5-flash",
+  "openaiModel": "gpt-4o",
+  "contractAddress": "0xE9170EfBDB9B1B11d155B047a62EFfCCB09080F3",
+  "marketId": "0x0000000000000000000000000000000000000000000000000000000000000005",
+  "chainSelector": 99911155111
+}

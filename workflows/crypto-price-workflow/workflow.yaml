@@ -1,0 +1,18 @@
+# Crypto Price Feed Workflow
+# Fetches BTC/ETH price from CoinGecko every 5 minutes and determines UP/DOWN outcome
+
+staging-settings:
+  user-workflow:
+    workflow-name: "crypto-price-workflow-staging"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.json"
+    secrets-path: ""
+
+production-settings:
+  user-workflow:
+    workflow-name: "crypto-price-workflow-production"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.production.json"
+    secrets-path: ""

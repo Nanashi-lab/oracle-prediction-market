@@ -1,0 +1,18 @@
+# ETH Price Feed Workflow
+# Same code as crypto-price-workflow, configured for ethereum (coinId=ethereum)
+
+staging-settings:
+  user-workflow:
+    workflow-name: "eth-price-workflow-staging"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.json"
+    secrets-path: ""
+
+production-settings:
+  user-workflow:
+    workflow-name: "eth-price-workflow-production"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.production.json"
+    secrets-path: ""

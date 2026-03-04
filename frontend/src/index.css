@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-oracle-bg: #0a0a0f;
+  --color-oracle-surface: #12121a;
+  --color-oracle-border: #1e1e2e;
+  --color-oracle-muted: #8888aa;
+  --color-oracle-green: #00ff88;
+  --color-oracle-red: #ff4444;
+  --color-oracle-cyan: #00d4ff;
+  --color-oracle-yellow: #ffaa00;
+  --color-oracle-purple: #aa66ff;
+  --color-oracle-text: #e8e8f0;
+
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-oracle-bg);
+  color: var(--color-oracle-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle grid texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Price flash animations */
+@keyframes flash-green {
+  0% { background-color: rgba(0, 255, 136, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-red {
+  0% { background-color: rgba(255, 68, 68, 0.2); }
+  100% { background-color: transparent; }
+}
+
+.price-flash-up {
+  animation: flash-green 0.4s ease-out;
+}
+
+.price-flash-down {
+  animation: flash-red 0.4s ease-out;
+}
+
+/* Countdown pulse */
+@keyframes countdown-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.countdown-urgent {
+  color: var(--color-oracle-red);
+  animation: countdown-pulse 1s ease-in-out infinite;
+}
+
+/* Toast animation */
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-out {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+.toast-enter {
+  animation: slide-in 0.3s ease-out;
+}
+
+.toast-exit {
+  animation: slide-out 0.3s ease-in forwards;
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.15), 0 0 40px rgba(0, 255, 136, 0.05);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), 0 0 40px rgba(0, 212, 255, 0.05);
+}
+
+/* Featured market glow */
+@keyframes featured-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.1), 0 0 60px rgba(0, 212, 255, 0.05); }
+  50% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.2), 0 0 80px rgba(0, 212, 255, 0.1); }
+}
+
+.featured-glow {
+  animation: featured-pulse 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-oracle-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-oracle-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-oracle-muted);
+}

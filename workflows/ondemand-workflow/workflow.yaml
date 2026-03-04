@@ -1,0 +1,16 @@
+# On-Demand Settlement Workflow
+# HTTP trigger — authorized user sends signed request to resolve a market round
+
+staging-settings:
+  user-workflow:
+    workflow-name: "ondemand-workflow-staging"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.json"
+
+production-settings:
+  user-workflow:
+    workflow-name: "ondemand-workflow-production"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.production.json"

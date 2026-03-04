@@ -1,0 +1,19 @@
+.DS_Store
+node_modules/
+dist/
+
+# Hardhat
+contracts/cache/
+contracts/artifacts/
+contracts/typechain-types/
+
+# Environment
+.env
+.env.local
+
+# CRE build artifacts
+.cre_build_tmp.js
+
+# Claude Code internal docs
+CLAUDE.md
+**/CLAUDE.md

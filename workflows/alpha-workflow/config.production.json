@@ -1,0 +1,4 @@
+{
+  "schedule": "0 */5 * * * *",
+  "alphaApiUrl": "http://localhost:3001/api/alpha/price"
+}

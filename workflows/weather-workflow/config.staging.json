@@ -1,0 +1,7 @@
+{
+  "schedule": "0 0 12 * * *",
+  "city": "New York",
+  "contractAddress": "0xE9170EfBDB9B1B11d155B047a62EFfCCB09080F3",
+  "marketId": "0x0000000000000000000000000000000000000000000000000000000000000004",
+  "chainSelector": 99911155111
+}

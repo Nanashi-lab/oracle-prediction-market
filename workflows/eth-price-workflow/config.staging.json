@@ -1,0 +1,8 @@
+{
+  "schedule": "0 */5 * * * *",
+  "coinId": "ethereum",
+  "apiUrl": "https://api.coingecko.com/api/v3/simple/price",
+  "contractAddress": "0xE9170EfBDB9B1B11d155B047a62EFfCCB09080F3",
+  "marketId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+  "chainSelector": 99911155111
+}
