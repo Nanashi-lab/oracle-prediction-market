@@ -2,9 +2,19 @@
 
 A decentralized prediction market where users bet on real-world outcomes using crypto. **Chainlink CRE** (Compute Runtime Environment) is the oracle layer — it fetches real-world data, verifies it cryptographically across a decentralized network, and writes the result onchain. The smart contract then automatically pays winners.
 
-Built for the [Chainlink Convergence Hackathon](https://chain.link/hackathon) (Feb 6 – Mar 8, 2025).
+Built for the [Chainlink Convergence Hackathon](https://chain.link/hackathon) (Feb 6 – Mar 8, 2026).
 
 **Track:** Prediction Markets | **Bonus:** Tenderly Virtual TestNets
+
+**Demo Video:** [Watch on YouTube](#) <!-- TODO: replace with actual link -->
+
+---
+
+## Screenshots
+
+| Home — Market Grid | Alpha Market — Trading View | My Bets — Portfolio Tracker |
+|---|---|---|
+| ![Market grid showing all 9 prediction markets](./screenshots/002.png) | ![Alpha market with live price chart, bet panel, and recent bets](./screenshots/001.png) | ![My Bets page with bet history, win/loss status, and portfolio stats](./screenshots/003.png) |
 
 ---
 
@@ -152,6 +162,18 @@ The entire platform runs on a **Tenderly Virtual TestNet** — a simulated block
 | **Explorer** | [Public Tenderly Explorer](https://virtual.rpc.tenderly.co/nanashi-lab/project/public/tenderly) |
 | **Contract** | `0xE9170EfBDB9B1B11d155B047a62EFfCCB09080F3` |
 | **Owner/Oracle** | `0x3ee04776dd69D5D0E1E9D18e9D1012F271808eF3` |
+
+### Why Tenderly (Bonus Track)
+
+Tenderly Virtual TestNets are not just a convenience — they're integral to how the platform works. The entire oracle-to-payout pipeline runs on Tenderly:
+
+- **CRE → Contract interaction** — All 10 CRE workflows target the Tenderly Virtual TestNet as their EVM chain. Workflows read round state (`callContract`) and write resolution results (`writeReport`) directly to the Tenderly-hosted contract.
+- **MetaMask → Contract interaction** — Users connect MetaMask to the Tenderly network and send real ETH transactions (`placeBet`, `claimWinnings`) that execute instantly.
+- **Hardhat deployment & scripting** — The contract was compiled, deployed, and configured (9 markets created) via Hardhat scripts targeting Tenderly. The `auto-resolve.ts` watcher also runs against Tenderly to settle rounds in real time.
+- **Impersonated signers** — Hardhat's `getImpersonatedSigner()` on Tenderly lets scripts act as the oracle wallet without exposing a private key, simplifying the demo resolve flow.
+- **Zero-friction development** — Instant block confirmations, free faucet ETH, and a full block explorer made it possible to iterate quickly across contract, frontend, and workflow development simultaneously.
+
+Without Tenderly, we would need a live testnet with slow confirmations, faucet rate limits, and no impersonation — significantly slowing development and making the demo less reliable.
 
 ### Deployed Markets
 
@@ -317,4 +339,4 @@ Copy `workflows/.env.example` to `workflows/.env` and fill in your keys:
 
 ## License
 
-Built for the Chainlink Convergence Hackathon 2025.
+Built for the Chainlink Convergence Hackathon 2026.

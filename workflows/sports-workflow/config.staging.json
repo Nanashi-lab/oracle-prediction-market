@@ -1,6 +1,6 @@
 {
   "contractAddress": "0xE9170EfBDB9B1B11d155B047a62EFfCCB09080F3",
-  "marketId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+  "marketId": "0xd1cfb15eb7f7fa4fdbdf7c418f591fd2f01b0c1fcb4c43bc3ebbfb0f69a6599d",
   "chainSelector": 99911155111,
   "geminiModel": "gemini-2.5-flash"
 }
