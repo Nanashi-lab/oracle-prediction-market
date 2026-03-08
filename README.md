@@ -6,7 +6,7 @@ Built for the [Chainlink Convergence Hackathon](https://chain.link/hackathon) (F
 
 **Track:** Prediction Markets | **Bonus:** Tenderly Virtual TestNets
 
-**Demo Video:** [Watch on YouTube](#) <!-- TODO: replace with actual link -->
+**Demo Video:** [Watch on Vimeo](https://vimeo.com/1171464314)
 
 ---
 
